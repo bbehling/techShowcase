@@ -12,11 +12,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 # Notes
 
-**_In dev mode, Next.js app will compile first time navigating to (http://localhost:3000)_**
+**_In dev mode, Next.js app will compile first time navigating to http://localhost:3000_**
 
 Please be aware the load times on the first navigation will be longer than normal. This is normal Next.js behavior. To validate, after the app is compiled, navigate too [http://localhost:3000](http://localhost:3000) in a different browser or refresh.
 
-In a production environment, the page is compiled at build, so delayed load times do not occur. In the case of using Azure, the is built in the build pipeline. See link below on deploying to Azure.
+In a production environment, SSR pages are compiled when built, so delayed load times do not occur. In the case of using Azure, the is built in the build pipeline. See link below on deploying to Azure. Next.js SSR pages can also be configured to recompile based on a schedule or caching scheme, but this is not configured for this demo.
 
 This demo application is designed so the landing page is server side rendered (SSR) and dynamic pages (filter and product page) are dynamic pages. This is called a Hybrid Next.js application. The benefit of an SSR landing page is extremely fast page loads which helps with Search Engine Optimizations.
 
