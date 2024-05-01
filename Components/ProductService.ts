@@ -7,7 +7,7 @@ import Logger from "./Logger";
 class ProductService {
   static async getProducts() {
     try {
-      const products: IProduct[] = [];
+      let products: IProduct[] = [];
       const res = await fetch("https://dummyjson.com/products");
 
       if (res.status != 200) {
@@ -16,9 +16,8 @@ class ProductService {
       }
 
       const data = await res.json();
-      data.products?.forEach((product: IProduct) => {
-        products.push(product);
-      });
+      products = data.products as IProduct[];
+
       return products;
     } catch (e) {
       Logger.Error(e);
@@ -27,7 +26,7 @@ class ProductService {
 
   static async filterProducts(filter: string) {
     try {
-      const products: IProduct[] = [];
+      let products: IProduct[] = [];
       const res = await fetch(`https://dummyjson.com/products/search?q=${filter}`);
 
       if (res.status != 200) {
@@ -36,9 +35,8 @@ class ProductService {
       }
 
       const data = await res.json();
-      data.products?.forEach((product: IProduct) => {
-        products.push(product);
-      });
+      products = data.products as IProduct[];
+
       return products;
     } catch (e) {
       Logger.Error(e);
