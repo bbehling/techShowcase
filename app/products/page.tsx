@@ -27,6 +27,11 @@ export default function Products() {
         </div>
       </div>
       <ProductTable products={products} />
+      <div className="d-flex justify-content-center mt-3">
+        <a className="btn btn-primary" href="/">
+          Back to Products
+        </a>
+      </div>
     </div>
   );
 }

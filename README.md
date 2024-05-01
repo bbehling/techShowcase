@@ -12,7 +12,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 # Notes
 
-**In dev mode, Next.js app will compile first time navigating to http://localhost:3000)**
+**_In dev mode, Next.js app will compile first time navigating to (http://localhost:3000)_**
 
 Please be aware the load times on the first navigation will be longer than normal. This is normal Next.js behavior. To validate, after the app is compiled, navigate too [http://localhost:3000](http://localhost:3000) in a different browser or refresh.
 
@@ -41,4 +41,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy to an Azure Static Web App
 
-See [how to] (https://learn.microsoft.com/en-us/azure/static-web-apps/deploy-nextjs-hybrid) deploy a Next.js application to an Azure Static Web App.
+See [how to](https://learn.microsoft.com/en-us/azure/static-web-apps/deploy-nextjs-hybrid) deploy a Next.js application to an Azure Static Web App.

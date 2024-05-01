@@ -1,6 +1,6 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 
 export default function Filter() {
   const [searchValue, setValue] = useState("");
@@ -31,7 +31,7 @@ export default function Filter() {
         aria-describedby="button-addon1"
         value={searchValue}
         onChange={handleChange}
-        onKeyPress={(event) => {
+        onKeyUp={(event) => {
           if (event.key === "Enter") {
             filter();
           }

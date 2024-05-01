@@ -1,5 +1,4 @@
 import ProductService from "@/Components/ProductService";
-import { IProduct } from "@/Models/IProduct";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
