@@ -4,8 +4,6 @@ import ProductTable from "@/Components/ProductTable/ProductTableComponent";
 import useSWR from "swr";
 
 export default function Products({ searchParams }) {
-  //const searchParams = useSearchParams();
-
   const filter = searchParams["filter"];
 
   const fetcher = async (url: string) => {
