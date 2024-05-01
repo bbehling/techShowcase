@@ -1,13 +1,12 @@
 "use client";
 import Filter from "@/Components/Filter/FilterComponent";
 import ProductTable from "@/Components/ProductTable/ProductTableComponent";
-import { useSearchParams } from "next/navigation";
 import useSWR from "swr";
 
-export default function Products() {
-  const searchParams = useSearchParams();
+export default function Products({ searchParams }) {
+  //const searchParams = useSearchParams();
 
-  const filter = searchParams.get("filter");
+  const filter = searchParams["filter"];
 
   const fetcher = async (url: string) => {
     let res = await fetch(`${url}`);

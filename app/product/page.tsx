@@ -1,13 +1,10 @@
 "use client";
 import useSWR from "swr";
-import { useSearchParams } from "next/navigation";
 import ProductComponent from "@/Components/Product/ProductComponent";
 import Loader from "@/Components/Loader";
 
-export default function Product() {
-  const searchParams = useSearchParams();
-
-  const productId = searchParams.get("productId");
+export default function Product({ searchParams }) {
+  const productId = searchParams["productId"];
 
   const fetcher = async (url: string) => {
     let res = await fetch(`${url}`);
