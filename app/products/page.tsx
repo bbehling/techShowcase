@@ -23,7 +23,7 @@ export default function Products() {
     <div className="container ">
       <div className="row">
         <div className="col-lg-6 col-sm-12 mx-auto">
-          <Filter />
+          <Filter filterParam={filter} />
         </div>
       </div>
       <ProductTable products={products} />

@@ -1,9 +1,16 @@
 "use client";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function Filter() {
+export default function Filter({ filterParam }) {
   const [searchValue, setValue] = useState("");
+
+  useEffect(() => {
+    if (filterParam) {
+      setValue(filterParam);
+    }
+  }, []);
+
   const handleChange = (e) => {
     if (e.target.value === "") {
       router.push(`/products`);
