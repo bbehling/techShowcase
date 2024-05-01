@@ -9,7 +9,7 @@ function currencyFormat(num: number) {
 }
 
 export default async function Home() {
-  const products = await ProductsService.getProducts();
+  const products = (await ProductsService.getProducts()) || [];
   return (
     <main>
       <div className="container ">

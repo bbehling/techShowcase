@@ -1,33 +1,64 @@
 import { IProduct } from "@/Models/IProduct";
+import Logger from "./Logger";
 
 /*
   Create a service class similar to Angular to make tests for data fetching a bit easier
 */
 class ProductService {
   static async getProducts() {
-    const products: IProduct[] = [];
-    const res = await fetch("https://dummyjson.com/products");
-    const data = await res.json();
-    data.products?.forEach((product: IProduct) => {
-      products.push(product);
-    });
-    return products;
+    try {
+      const products: IProduct[] = [];
+      const res = await fetch("https://dummyjson.com/products");
+
+      if (res.status != 200) {
+        Logger.Error(`Error getting products: ${res.statusText}`);
+        return [];
+      }
+
+      const data = await res.json();
+      data.products?.forEach((product: IProduct) => {
+        products.push(product);
+      });
+      return products;
+    } catch (e) {
+      Logger.Error(e);
+    }
   }
 
   static async filterProducts(filter: string) {
-    const products: IProduct[] = [];
-    const res = await fetch(`https://dummyjson.com/products/search?q=${filter}`);
-    const data = await res.json();
-    data.products?.forEach((product: IProduct) => {
-      products.push(product);
-    });
-    return products;
+    try {
+      const products: IProduct[] = [];
+      const res = await fetch(`https://dummyjson.com/products/search?q=${filter}`);
+
+      if (res.status != 200) {
+        Logger.Error(`Error filtering products: ${res.statusText}`);
+        return [];
+      }
+
+      const data = await res.json();
+      data.products?.forEach((product: IProduct) => {
+        products.push(product);
+      });
+      return products;
+    } catch (e) {
+      Logger.Error(e);
+    }
   }
 
   static async getProduct(productId: number) {
-    const res = await fetch(`https://dummyjson.com/products/${productId}`);
-    const product = (await res.json()) as IProduct;
-    return product;
+    try {
+      const res = await fetch(`https://dummyjson.com/products/${productId}`);
+
+      if (res.status != 200) {
+        Logger.Error(`Error getting product: ${res.statusText}`);
+        return {};
+      }
+
+      const product = (await res.json()) as IProduct;
+      return product;
+    } catch (e) {
+      Logger.Error(e);
+    }
   }
 
   static currencyFormat(num: number) {
