@@ -9,7 +9,7 @@ export default async function Home() {
       <div className="container ">
         <div className="row">
           <div className="col-lg-6 col-sm-12 mx-auto">
-            <Filter />
+            <Filter filterParam={""} />
           </div>
         </div>
         <ProductTable products={products} />
