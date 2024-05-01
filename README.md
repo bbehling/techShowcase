@@ -18,7 +18,7 @@ Please be aware the load times on the first navigation will be longer. This is n
 
 In a production environment, SSR pages are compiled when built, so delayed load times do not occur. In the case of using Azure, app is built in the build pipeline. See link below on deploying to Azure. Next.js SSR pages can also be configured to recompile based on a schedule or caching scheme, but this is not configured for this demo.
 
-This demo application is designed so the landing page is server side rendered (SSR) and dynamic pages (filter and product page) are dynamic pages. This is called a Hybrid Next.js application. The benefit of an SSR landing page is extremely fast page loads which helps with Search Engine Optimizations.
+This demo application is designed so the landing page is server side rendered (SSR) and dynamic pages (filter and product) are dynamic pages. This is called a Hybrid Next.js application. The benefit of an SSR landing page is extremely fast page loads which helps with Search Engine Optimizations.
 
 # Testing
 
